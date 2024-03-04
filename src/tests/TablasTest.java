@@ -1,11 +1,10 @@
 package tests;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,17 +34,15 @@ class TablasTest {
     @MethodSource("gira90")
 	void testGira90(int[][] matriz, int[][] expected) {
     	int[][] result = Tablas.gira90(matriz);
-		assertEquals(expected, result);
+		assertArrayEquals(expected, result);
 	}
 	
 
     private static Stream<Arguments> gira90() {
-    	int[][] tabla = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    	//int[][] tabla2 = {{7, 4, 1}, {8, 5, 2}, {9, 6, 3}};
     	return Stream.of(
     			Arguments.of(
-    				tabla,
-    				tabla
+    				new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}},
+    				new int[][]{{7, 4, 1}, {8, 5, 2}, {9, 6, 3}}
     			)
     		);
     }
