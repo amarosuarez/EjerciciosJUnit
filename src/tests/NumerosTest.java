@@ -31,5 +31,23 @@ class NumerosTest {
 					Arguments.of(333, true)
 				);
 	}
+	
+	@ParameterizedTest
+	@MethodSource("esPrimo")
+	void testEsPrimo(int num, boolean expected) {
+		Numeros numeros = new Numeros(num);
+		
+		boolean resultado = numeros.esPrimo();
+		
+		assertEquals(expected, resultado);
+		
+	}
+	
+	private static Stream<Arguments> esPrimo() {
+		return Stream.of(
+					Arguments.of(2, true),
+					Arguments.of(10, false)
+				);
+	}
 
 }
