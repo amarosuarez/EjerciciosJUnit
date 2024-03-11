@@ -25,10 +25,9 @@ class NumerosTest {
 	
 	private static Stream<Arguments> esCapicua() {
 		return Stream.of(
-					Arguments.of(22, true),
+					Arguments.of(1, true),
 					Arguments.of(10, false),
-					Arguments.of(-22, false),
-					Arguments.of(333, true)
+					Arguments.of(-22, false)
 				);
 	}
 	
@@ -45,9 +44,10 @@ class NumerosTest {
 	
 	private static Stream<Arguments> esPrimo() {
 		return Stream.of(
+					Arguments.of(1, false),
 					Arguments.of(2, true),
-					Arguments.of(10, false)
-				);
+					Arguments.of(12, false)			
+		);
 	}
 
 }

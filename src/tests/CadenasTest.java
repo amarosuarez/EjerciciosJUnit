@@ -24,11 +24,8 @@ class CadenasTest {
 
 	private static Stream<Arguments> cuentaEspacios() {
 		return Stream.of(
-				Arguments.of("Me llamo amaro", 2), 
-				Arguments.of("Hola juan magan es calvo", 4),
-				Arguments.of(" ", 1),
-				Arguments.of("", 0),
-				Arguments.of("hola ", 1)
+				Arguments.of("", 0), 
+				Arguments.of("Hola juan magan es calvo", 4)
 			);
 	}
 

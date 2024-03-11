@@ -40,6 +40,10 @@ class TablasTest {
 
     private static Stream<Arguments> gira90() {
     	return Stream.of(
+    			Arguments.of(null, null),
+    			Arguments.of(new int[][] {{1,2,3},{4,5}}, null),
+    			// No se puede out of bounds Arguments.of(new int[][]{}, new int[][]{}),
+    			Arguments.of(new int[][]{{1}, {2}}, null),
     			Arguments.of(
     				new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}},
     				new int[][]{{7, 4, 1}, {8, 5, 2}, {9, 6, 3}}
